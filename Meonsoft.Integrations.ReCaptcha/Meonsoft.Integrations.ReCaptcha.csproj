@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Daniel James Thorne</Authors>
+    <Company>Meonsoft</Company>
+    <Description>Google ReCaptcha challenge server-side integration; response verification via http client.  Just use static method `GoogleReCaptcha.VerifyAsync(secret, response,remoteip,endpoint)`.  The last two parameters have default values.</Description>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Copyright />
+    <RepositoryUrl>https://github.com/rombethor/Meonsoft.Integrations.ReCaptcha</RepositoryUrl>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
