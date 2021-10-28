@@ -18,12 +18,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore -c Release 
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Pack
-      run: dotnet pack Meonsoft.Integrations.ReCaptcha/Meonsoft.Integrations.ReCaptcha.csproj --no-build -c Release -o out
     - name: Publish NuGet to GitHub
-      run: dotnet nuget push out/*.nupkg -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/rombethor/index.json --skip-duplicate --no-symbols true
+      run: dotnet nuget push Meonsoft.Integrations.ReCaptcha/bin/Release/*.nupkg -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/rombethor/index.json --skip-duplicate --no-symbols true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
